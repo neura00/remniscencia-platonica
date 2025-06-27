@@ -9,9 +9,9 @@
             font-family: Arial, sans-serif;
             background: url('background.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: white;
-            text-align: center;
+            color: black;
             padding: 50px;
+            text-align: center;
         }
         h1 {
             font-size: 2.5em;
@@ -30,6 +30,7 @@
             font-size: 1.2em;
             cursor: pointer;
             border-radius: 5px;
+            margin: 10px;
         }
         button:hover {
             background-color: rgba(0,0,0,0.9);
@@ -38,8 +39,23 @@
 </head>
 <body>
     <h1>Reflexão sobre a Reminiscência Platônica</h1>
-    <p>Através das suas respostas, você explorou o conceito de "lembrar" e de conhecimento profundo. Platão acreditava que todas as nossas experiências são, na verdade, recordações da nossa alma que, antes de nascer, já tinha acesso ao mundo das ideias. Assim, o conhecimento não é adquirido, mas relembrado.</p>
-    <p>Agora, pense: como suas respostas se conectam com essa ideia? Como pode aplicar essa reflexão em sua vida diária, para se conectar com uma sabedoria mais profunda e universal?</p>
-    <button onclick="window.location.href='index.html'">Refletir novamente</button>
+    <p><strong>Resposta 1:</strong> <span id="response1"></span></p>
+    <p><strong>Resposta 2:</strong> <span id="response2"></span></p>
+
+    <!-- Botão para repetir o exercício -->
+    <button onclick="window.location.href='exercicio.html'">Repetir</button>
+
+    <!-- Botão para sair e ir para o Google com o termo Platão -->
+    <button onclick="window.location.href='https://www.google.com/search?q=Platão'">Sair para o Google</button>
+
+    <script>
+        // Acessar as respostas salvas no localStorage
+        var answer1 = localStorage.getItem("answer1");
+        var answer2 = localStorage.getItem("answer2");
+
+        // Exibir as respostas na página
+        document.getElementById('response1').textContent = answer1;
+        document.getElementById('response2').textContent = answer2;
+    </script>
 </body>
 </html>
