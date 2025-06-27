@@ -12,6 +12,7 @@
             color: white;
             text-align: center;
             padding: 50px;
+            position: relative; /* Para garantir que o conteúdo se posiciona corretamente */
         }
         h1 {
             font-size: 2.5em;
@@ -25,6 +26,7 @@
             font-size: 1.2em;
             cursor: pointer;
             border-radius: 5px;
+            z-index: 10; /* Garantir que o botão esteja acima de outros elementos */
         }
         button:hover {
             background-color: rgba(0,0,0,0.9);
@@ -32,6 +34,7 @@
         #video-container {
             display: none;
             margin-top: 30px;
+            z-index: 5; /* O vídeo aparecerá abaixo do botão */
         }
         iframe {
             width: 80%;
@@ -57,4 +60,8 @@
 
     <script>
         function showVideo() {
-            // Quando o botão for clicado, mostramos
+            document.getElementById('video-container').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
