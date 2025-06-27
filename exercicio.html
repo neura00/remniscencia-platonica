@@ -44,6 +44,13 @@
 </head>
 <body>
     <h1>Exercício de Reflexão Platônica</h1>
+
+    <!-- Música de fundo -->
+    <audio id="background-music" autoplay loop>
+        <source src="sua-musica.mp3" type="audio/mp3"> <!-- Coloque o link para a sua música -->
+        Seu navegador não suporta áudio.
+    </audio>
+
     <div class="question">
         <p><strong>Pergunta 1:</strong> Você já teve uma experiência em que ao aprender algo novo, teve a sensação de "já saber" aquilo de algum lugar? O que isso pode significar para você?</p>
         <textarea id="answer1"></textarea>
@@ -60,31 +67,13 @@
             var answer2 = document.getElementById('answer2').value;
 
             if (answer1 && answer2) {
-                // URL do seu webhook do Google Apps Script
-                var url = "SEU_WEBHOOK_URL"; // Substitua com o URL gerado no Google Apps Script
+                // Armazenar as respostas no localStorage
+                localStorage.setItem("answer1", answer1);
+                localStorage.setItem("answer2", answer2);
 
-                var data = {
-                    "answer1": answer1,
-                    "answer2": answer2
-                };
-
-                // Enviar as respostas para o Google Sheets
-                fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                })
-                .then(response => response.text())
-                .then(response => {
-                    alert("Respostas enviadas com sucesso!");
-                    window.location.href = 'reflexao.html'; // Redireciona para a página de reflexão
-                })
-                .catch(error => {
-                    console.error("Erro ao enviar as respostas:", error);
-                    alert("Houve um erro ao enviar as respostas.");
-                });
+                // Redirecionar para a página de reflexão
+                alert("Respostas salvas com sucesso!");
+                window.location.href = 'reflexao.html'; // Redireciona para a página de reflexão
             } else {
                 alert("Por favor, responda a todas as perguntas.");
             }
