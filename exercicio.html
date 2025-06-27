@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de Reflexão Platônica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('background.jpg') no-repeat center center fixed; 
+            background-size: cover;
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .question {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 80%;
+            height: 150px;
+            font-size: 1.2em;
+            margin: 20px 0;
+            padding: 10px;
+        }
+        button {
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: rgba(0,0,0,0.9);
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercício de Reflexão Platônica</h1>
+    <div class="question">
+        <p><strong>Pergunta 1:</strong> Você já teve uma experiência em que ao aprender algo novo, teve a sensação de "já saber" aquilo de algum lugar? O que isso pode significar para você?</p>
+        <textarea id="answer1"></textarea>
+    </div>
+    <div class="question">
+        <p><strong>Pergunta 2:</strong> Se você pudesse recordar um conhecimento universal, qual seria? Como isso poderia mudar sua vida?</p>
+        <textarea id="answer2"></textarea>
+    </div>
+    <button onclick="submitAnswers()">Enviar Respostas</button>
+
+    <script>
+        function submitAnswers() {
+            var answer1 = document.getElementById('answer1').value;
+            var answer2 = document.getElementById('answer2').value;
+
+            if (answer1 && answer2) {
+                alert("Obrigado por refletir sobre o conhecimento! Agora, medite sobre o conceito de reminiscência platônica.");
+                window.location.href = 'reflexao.html'; // redireciona para a próxima página
+            } else {
+                alert("Por favor, responda a todas as perguntas.");
+            }
+        }
+    </script>
+</body>
+</html>
