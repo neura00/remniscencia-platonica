@@ -40,6 +40,11 @@
             width: 80%;
             height: 500px;
         }
+        #next-button {
+            display: none;
+            margin-top: 20px;
+            z-index: 10; /* Botão aparecerá acima do vídeo */
+        }
     </style>
 </head>
 <body>
@@ -51,16 +56,28 @@
     <!-- Container do vídeo do YouTube (inicialmente oculto) -->
     <div id="video-container">
         <iframe 
-            src="https://www.youtube.com/embed/R9jOWIhZZCE" 
+            id="video-iframe"
+            src="https://www.youtube.com/embed/R9jOWIhZZCE?rel=0&controls=0&modestbranding=1&showinfo=0" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
         </iframe>
     </div>
 
+    <!-- Novo botão para avançar para o exercício (inicialmente invisível) -->
+    <div id="next-button">
+        <button onclick="window.location.href='exercicio.html'">Ir para o Exercício</button>
+    </div>
+
     <script>
         function showVideo() {
+            // Exibe o vídeo
             document.getElementById('video-container').style.display = 'block';
+            
+            // Inicia a contagem para mostrar o próximo botão após 15 segundos
+            setTimeout(function() {
+                document.getElementById('next-button').style.display = 'block';
+            }, 15000); // 15 segundos = 15000 milissegundos
         }
     </script>
 </body>
