@@ -41,10 +41,50 @@
         button:hover {
             background-color: rgba(0,0,0,0.9);
         }
-        /* Estilos para o mini leitor de áudio */
+
+        /* Ocultar vídeo, mas continuar tocando o áudio */
         #audio-player {
-            width: 100%;
-            height: 50px; /* Altura reduzida, já que não estamos exibindo o vídeo */
+            width: 1px;
+            height: 1px;
+            visibility: hidden; /* Esconde o iframe */
+        }
+
+        /* Estilos para dispositivos móveis */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .question {
+                font-size: 1.2em;
+            }
+            textarea {
+                width: 90%;
+                font-size: 1em;
+            }
+            button {
+                font-size: 1em;
+                padding: 12px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            .question {
+                font-size: 1em;
+            }
+            textarea {
+                width: 95%;
+                font-size: 0.9em;
+            }
+            button {
+                font-size: 0.9em;
+                padding: 10px 18px;
+            }
         }
     </style>
 </head>
@@ -84,3 +124,4 @@
     </script>
 </body>
 </html>
+
